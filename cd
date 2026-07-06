@@ -1,0 +1,124 @@
+1. Burp Suite Configuration
+Steps:
+1.	1. Open Burp Suite -> Proxy -> Intercept = ON
+2.	2. Browser proxy: 127.0.0.1 Port 8080
+3.	3. Open target application.
+4.	4. Captured request appears in Proxy.
+5.	5. Forward or Drop the request.
+6.	6. Repeater: Right click request -> Send to Repeater.
+7.	7. Intruder: Right click request -> Send to Intruder.
+Commands:
+No terminal commands.
+2. Wireshark
+Steps:
+8.	1. Open Wireshark.
+9.	2. Select interface.
+10.	3. Start Capture.
+11.	4. Generate traffic.
+12.	5. Stop Capture.
+13.	6. Apply filters.
+Commands:
+http
+dns
+tcp
+icmp
+ip.addr==192.168.1.10
+3. Nmap
+Steps:
+14.	1. Discover host
+15.	2. Scan common ports
+16.	3. Service detection
+17.	4. OS detection
+18.	5. Aggressive scan
+19.	6. UDP scan
+Commands:
+nmap <IP>
+nmap -p 1-1000 <IP>
+nmap -sV <IP>
+nmap -O <IP>
+nmap -A <IP>
+nmap -sU <IP>
+4. WHOIS / DNS
+Steps:
+20.	1. Get domain information
+21.	2. DNS lookup
+22.	3. Advanced DNS lookup
+23.	4. Hostname lookup
+Commands:
+whois example.com
+nslookup example.com
+dig example.com
+host example.com
+5. Traceroute
+Steps:
+24.	1. Trace network path
+Commands:
+traceroute google.com   # Linux
+tracert google.com      # Windows
+6. John the Ripper
+Steps:
+25.	1. Crack password hash
+26.	2. Dictionary attack
+Commands:
+john hash.txt
+john --wordlist=passwords.txt hash.txt
+7. Hydra (authorized labs only)
+Steps:
+27.	1. SSH password audit
+Commands:
+hydra -l admin -P passwords.txt ssh://192.168.1.5
+8. Netcat
+Steps:
+28.	1. Listener
+29.	2. Client
+Commands:
+nc -lvnp 4444
+nc <IP> 4444
+9. Snort IDS
+Steps:
+30.	1. Run Snort IDS
+Commands:
+snort -A console -q -c /etc/snort/snort.conf -i eth0
+10. Metasploit
+Steps:
+31.	1. Start
+32.	2. Search
+33.	3. Use module
+34.	4. Show options
+35.	5. Set target
+36.	6. Run
+Commands:
+msfconsole
+search smb
+use exploit/...
+show options
+set RHOSTS <IP>
+exploit
+11. ADB
+Steps:
+37.	1. List devices
+38.	2. Install APK
+39.	3. Shell
+40.	4. Logs
+Commands:
+adb devices
+adb install app.apk
+adb shell
+adb logcat
+12. MobSF
+Steps:
+41.	1. Start MobSF
+42.	2. Upload APK
+43.	3. View report: Permissions, Secrets, APIs, Weak Crypto
+Common Linux Commands
+pwd
+ls
+cd
+mkdir test
+cp file1 file2
+mv file1 dir/
+rm file
+find / -name filename
+ip addr
+ifconfig
+ping google.com
